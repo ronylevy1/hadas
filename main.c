@@ -1,92 +1,40 @@
 #include <stdio.h>
 #include "NumClass.h"
 
-int main()
-{
-    int x, y;
-    scanf("%d%d", &x, &y);
+int main() {
+    int a, b, i;
 
-    if (x > y)
+    scanf("%d%d",&a,&b);
+
+    printf("The Armstrong numbers are:");
+    for (i = a; i <= b; ++i)
     {
-        
-        printf("The Armstrong numbers are:");
-        for (int i = y; i <= x; i++)
-        {
-            if (isArmstrong(i))
-            {
-                printf(" %d", i);
-            }
-        }
-        printf("\n");
-        printf("The Palindromes are:");
-        for (int i = y; i <= x; i++)
-        {
-            if (isPalindrome(i))
-            {
-                printf(" %d", i);
-            }
-        }
-                printf("\n");
-
-        printf("The Strong numbers are:");
-        for (int i = y; i <= x; i++)
-        {
-            if (isStrong(i))
-            {
-                printf(" %d", i);
-            }
-        }
-
-           printf("\n");
-        printf("The Prime numbers are:");
-        for (int i = y; i <= x; i++)
-        {
-            if (isPrime(i))
-            {
-                printf(" %d", i);
-            }
-        }
-        printf("\n");
+        if (isArmstrong(i))
+            printf(" %d", i);
     }
-     
-    // else
-    // {
-    //     printf("The Strong numbers are:");
-    //     for (int i = x; i <= y; i++)
-    //     {
-    //         if (isStrong(i))
-    //         {
-    //             printf(" %d", i);
-    //         }
-    //     }
-    //     printf("\n");
-    //     printf("The Palindromes are:");
-    //     for (int i = x; i <= y; i++)
-    //     {
-    //         if (isPalindrome(i))
-    //         {
-    //             printf(" %d", i);
-    //         }
-    //     }
-    //     printf("\n");
-    //     printf("The Prime numbers are:");
-    //     for (int i = x; i <= y; i++)
-    //     {
-    //         if (isPrime(i))
-    //         {
-    //             printf(" %d", i);
-    //         }
-    //     }
-    //     printf("\n");
-    //     printf("The Armstrong numbers are:");
-    //     for (int i = x; i <= y; i++)
-    //     {
-    //         if (isArmstrong(i))
-    //         {
-    //             printf(" %d", i);
-    //         }
-    //     }
-    //     printf("\n");
-    // }
+
+    printf("\nThe Palindromes are:");
+    for (i = a; i <= b; ++i)
+    {
+        if (isPalindrome(i))
+            printf(" %d", i);
+    }
+
+    printf("\nThe Prime numbers are:");
+    for (i = a; i <= b; ++i)
+    {
+        if (isPrime(i))
+            printf(" %d", i);
+    }
+
+    printf("\nThe Strong numbers are:");
+    for (i = a; i <= b; ++i)
+    {
+        if (isStrong(i))
+             printf(" %d", i);
+    }
+
+    printf("\n");
+
     return 0;
 }
