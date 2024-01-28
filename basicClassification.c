@@ -5,7 +5,7 @@ int sum2 = 1;
 
 int isPrime(int number)
 {
-    if (number == 1)
+    if (number == 1 || number == 2)
     {
         return 1;
     }
