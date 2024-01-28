@@ -30,28 +30,14 @@ int isArmstrong(int num)
     return 0;
 }
 
-int isPalindrome(int num)
-{
+int isPalindrome(int num){
+    int reversed = 0, original = num;
 
-    int count = 0;
-    int num2 = num;
-    while (num != 0)
-    {
-        count++;
-        num = num / 10;
+    while(num > 0){
+        int digit = num % 10;
+        reversed = reversed * 10 + digit;
+        num /= 10;
     }
-    int arr[count];
-    for (int i = count - 1; i >= 0; i--)
-    {
-        arr[i] = num2 % 10;
-        num2 = num2 / 10;
-    }
-    for (int i = 0; i < count / 2; i++)
-    {
-        if (arr[i] != arr[count - i - 1])
-        {
-            return 0;
-        }
-    }
-    return 1;
+
+    return original == reversed;
 }
