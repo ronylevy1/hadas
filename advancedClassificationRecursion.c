@@ -33,26 +33,17 @@ int isArmstrong(int num){
     return (sum == num);
     }
 
+int reverseNumber(int num, int rev){
+    if(num == 0){
+        return rev;
+    }
+    else{
+        int digit = num % 10;
+        int remaining = num / 10;
+        return reverseNumber(remaining, rev * 10 + digit);
+    }
+}
+
 int isPalindrome(int num){
-    if(num < 10){
-        return 1;
-    }
-    int lastDigit = num % 10;
-    int firstDigit = 0;
-    int temp = num;
-
-    while(temp >= 10){
-        temp /= 10;
-    }
-    firstDigit = temp;
-
-    if(firstDigit != lastDigit){
-        return 0;
-    }
-
-    int power = 1;
-    while(num / power >= 10){
-        power = power * 10;
-    }
-    return isPalindrome((num % power) / 10);
+    return num == reverseNumber(num, 0);
 }
